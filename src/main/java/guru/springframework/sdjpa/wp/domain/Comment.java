@@ -91,11 +91,11 @@ public class Comment {
     @Size(max = 20)
     private Long commentParent;
 
-    @OneToMany
-    @JoinColumn(name = "comment_id")
+    @OneToMany(mappedBy = "comment")
     private Set<CommentMeta> commentMetaSet;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Long getId() {

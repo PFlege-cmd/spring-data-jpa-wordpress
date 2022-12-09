@@ -67,8 +67,7 @@ public class User {
     @Basic(optional = false)
     String displayName;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @OneToMany(mappedBy = "user")
     Set<UserMeta> userMetaSet;
 
     @OneToMany
